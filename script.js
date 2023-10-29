@@ -1,15 +1,16 @@
 //1 piedra, 2 papel, 3 tijera
 let jugador = 0
-let pc = 2
+let min = 1
+let max = 3
+let pc = Math.floor(Math.random() * (max - min + 1) + min)
 jugador = prompt("Escoge: 1 para piedra, 2 para papel, 3 para tijera")
-//alert("Elegistes " + jugador)
 //Area del Jugador
 if (jugador == 1) {
-    alert("Elejistes Piedra")
+    alert("Elegistes Piedra")
 } else if (jugador == 2) {
-    alert("Elejistes Papel")
+    alert("Elegistes Papel")
 } else if (jugador == 3) {
-    alert("Elejistes Tijera")
+    alert("Elegistes Tijera")
 } else {
     alert("Por Favor ingresa un numero correcto")
 }
