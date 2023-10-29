@@ -1,29 +1,29 @@
 //1 piedra, 2 papel, 3 tijera
+function aleatorio(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+function eleccion(jugada) {
+    let resultado = ""
+    if (jugada == 1) {
+        resultado = "Piedra"
+    } else if (jugada == 2) {
+        resultado = "Papel"
+    } else if (jugada == 3) {
+        resultado = "Tijera"
+    } else {
+        resultado = "Por Favor ingresa un numero correcto"
+    }
+    return resultado
+}
 let jugador = 0
 let min = 1
 let max = 3
-let pc = Math.floor(Math.random() * (max - min + 1) + min)
+let pc = aleatorio(1, 3)
 jugador = prompt("Escoge: 1 para piedra, 2 para papel, 3 para tijera")
-//Area del Jugador
-if (jugador == 1) {
-    alert("Elegistes Piedra")
-} else if (jugador == 2) {
-    alert("Elegistes Papel")
-} else if (jugador == 3) {
-    alert("Elegistes Tijera")
-} else {
-    alert("Por Favor ingresa un numero correcto")
-}
-//Area de PC
-if(pc == 1) {
-    alert("PC elige Piedra")
-} else if (pc == 2) {
-    alert("PC elige papel")
-} else if (pc == 3){
-    alert("PC elige tijera")
-}
+alert ("Elegistes: " + eleccion(jugador))
+alert ("PC elegio: " + eleccion(pc))
 //comienzo del juego
-if(pc == jugador) {
+if (pc == jugador) {
     alert("Empate")
 } else if (jugador == 1 && pc == 3) {
     alert("Ganastes")
